@@ -36,6 +36,7 @@ export default function TodoPage(): JSX.Element {
          });
          if(res) {
             console.log("added successfully");
+            setTodo("");
          }
       } catch (err) {
          console.error(err);
@@ -73,14 +74,14 @@ export default function TodoPage(): JSX.Element {
    },[]);
    return (
       <Fragment>
-         <div className="w-full h-screen flex justify-center">
-            <div className="md:w-[450px] w-[400px]">
+         <div className={"w-full h-screen flex justify-center"}>
+            <div className={"md:w-[450px] w-[400px]"}>
                <Form
                   change={change}
                   todo={todo}
                   submitForm={submitForm}
                />
-               <div className="mt-2 h-[calc(100vh-80px)] overflow-y-auto">
+               <div className={"mt-2 h-[calc(100vh-80px)] overflow-y-auto"}>
                   {isLoading
                      ? <p className={"text-center text-red-500 capitalize font-bold"}>loading...</p>
                      : data?.map((items) => (
